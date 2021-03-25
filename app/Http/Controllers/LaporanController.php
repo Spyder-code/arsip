@@ -87,7 +87,7 @@ class LaporanController extends Controller
             $table->addCell(500)->addText($item->id);
             $table->addCell(2000)->addText(date('d/m/y', strtotime($item->created_at)));
             $table->addCell(2000)->addText($item->dari);
-            $table->addCell(2000)->addText($item->nomor);
+            $table->addCell(2000)->addText($item->nomor_surat);
             $table->addCell(3000)->addText($item->perihal);
         }
 
@@ -123,7 +123,7 @@ class LaporanController extends Controller
             $table->addCell(500)->addText($item->id);
             $table->addCell(2000)->addText(date('d/m/y', strtotime($item->created_at)));
             $table->addCell(2000)->addText($item->dari);
-            $table->addCell(2000)->addText($item->nomor);
+            $table->addCell(2000)->addText($item->nomor_surat);
             $table->addCell(3000)->addText($item->perihal);
         }
 

@@ -1,9 +1,7 @@
 @section('js')
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#table').DataTable({
-      "iDisplayLength": 50
-    });
+    $('#table').DataTable();
 
 } );
 </script>
@@ -73,8 +71,8 @@
                           <th>No.</th>
                           <th>Dari</th>
                           <th>Untuk</th>
-                          <th width="200px">Nomor_surat</th>
-                          <th width="250px">Perihal</th>
+                          <th>Nomor_surat</th>
+                          <th>Perihal</th>
                           <th>Tahun</th>
                           <th>Tanggal masuk</th>
                           <th>Action</th>
@@ -97,7 +95,7 @@
                           </td>
                           <td>
                             <a href="{{url('surat/'.$item->id)}}" target="d_blank"> 
-                              {{$item->perihal}}
+                              {{str_limit($item->perihal,30)}}
                             </a>
                           </td>
                           <td>{{$item->tahun}}</td>

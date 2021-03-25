@@ -58,8 +58,16 @@
                           </td>
                           <td>{{ $item->dari }}</td>
                           <td>{{ $item->untuk }}</td>
-                          <td>{{ $item->nomor }}</td>
-                          <td>{{$item->perihal}}</td>
+                          <td>
+                            <a href="{{url('surat/'.$item->id)}}" target="d_blank"> 
+                              {{$item->nomor_surat}}
+                            </a>
+                          </td>
+                          <td>
+                            <a href="{{url('surat/'.$item->id)}}" target="d_blank"> 
+                              {{str_limit($item->perihal,30)}}
+                            </a>
+                          </td>
                           <td>{{date('d/m/y', strtotime($item->created_at))}}</td>
                           <td>
                             <div class="btn-group dropdown">

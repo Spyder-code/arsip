@@ -107,8 +107,8 @@
                           <th>No</th>
                           <th>Dari</th>
                           <th>Untuk</th>
-                          <th>Perihal</th>
                           <th>Nomor</th>
+                          <th>Perihal</th>
                           <th>Tanggal masuk</th>
                           <th>Action</th>
                         </tr>
@@ -130,7 +130,7 @@
                         </td>
                         <td>
                           <a href="{{url('surat/'.$item->id)}}" target="d_blank"> 
-                            {{$item->perihal}}
+                            {{str_limit($item->perihal,30)}}
                           </a>
                         </td>
                         <td>{{$item->tahun}}</td>

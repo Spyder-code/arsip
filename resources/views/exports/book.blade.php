@@ -16,7 +16,7 @@
             <td>{{date('d/m/y', strtotime($item->created_at))}}</td>
             <td>{{ $item->dari }}</td>
             <td>{{ $item->untuk }}</td>
-            <td>{{ $item->nomor }}</td>
+            <td>{{ $item->nomor_surat }}</td>
             <td>{{ $item->perihal }}</td>
         </tr>
     @endforeach

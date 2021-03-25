@@ -18,20 +18,20 @@
   <link href="{{ asset('images/kominfo.png') }}" rel="apple-touch-icon">
 </head>
 
-<body>
+<body class="bg-danger">
 <form method="POST" action="{{ route('login') }}">
 {{ csrf_field() }}
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">
       <div class="content-wrapper d-flex align-items-center auth theme-one">
-
         <div class="row w-100">
-        <div class="col-md-12" style="margin-bottom: 20px;">
-        <h2 style="text-align: center;">ARSIP SURAT</h2>
+        <div class="col-lg mx-auto d-flex">
+          <img src="{{ asset('images/bssn.png') }}" class="img-fluid">
         </div>
-        <div class="col-lg-4 mx-auto">
-            <div class="auto-form-wrapper">
-                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"">
+        <div class="col-lg my-auto">
+          <h2>LAPORAN ARSIP SURAT MASUK</h2>
+            <div class="auto-form-wrapper" style="width: 500px">
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                   <label class="label">Username</label>
                   <div class="input-group">
                     <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -67,13 +67,11 @@
                   <button class="btn btn-primary submit-btn btn-block" type="submit">Login</button>
                 </div>
             </div>
-            <p class="footer-text text-center" style="margin-top: 20px;color: #308ee0">Copyright © {{date('Y')}} Diskominfo Kabupaten Mojokerto</p>
+            <p class="footer-text" style="margin-top: 20px;color: #308ee0">Copyright © {{date('Y')}} Diskominfo Kabupaten Mojokerto</p>
           </div>
         </div>
       </div>
-      <!-- content-wrapper ends Herziwp@gmail.com -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
   </form>
   <script src="{{asset('vendors/js/vendor.bundle.base.js')}}"></script>
