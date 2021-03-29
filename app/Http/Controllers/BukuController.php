@@ -133,7 +133,8 @@ class BukuController extends Controller
         $this->validate($request, [
             'dari' => 'required',
             'untuk' => 'required',
-            'perihal' => 'required'
+            'perihal' => 'required',
+            'nomor_surat' => 'required',
         ]);
         Buku::find($id)->update($request->all());
 

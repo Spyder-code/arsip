@@ -37,7 +37,7 @@
                     <div class="form-group{{ $errors->has('nomor') ? ' has-error' : '' }}">
                         <label for="nomor" class="col-md-4 control-label">Nomor</label>
                         <div class="col-md-6">
-                            <input id="nomor" type="text" class="form-control" name="nomor" value="{{ $data->nomor }}" required>
+                            <input id="nomor" type="text" class="form-control" name="nomor_surat" value="{{ $data->nomor_surat }}" required>
                             @if ($errors->has('nomor'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('nomor') }}</strong>
