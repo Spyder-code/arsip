@@ -74,7 +74,7 @@
                         <button type="reset" class="btn btn-danger">
                                     Reset
                         </button>
-                        <a href="{{route('buku.index')}}" class="btn btn-light pull-right">Back</a>
+                        <a href="{{route('buku.index',['year'=>date('Y')])}}" class="btn btn-light pull-right">Back</a>
                     </div>
                   </div>
                 </div>

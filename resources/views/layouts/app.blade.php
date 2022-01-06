@@ -104,7 +104,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ setActive(['buku*']) }}" href="{{route('buku.index')}}">
+            <a class="nav-link {{ setActive(['buku*']) }}" href="{{route('buku.index',['year'=>date('Y')])}}">
               <i class="menu-icon mdi mdi-book"></i>
               <span class="menu-title">Surat masuk</span>
             </a>

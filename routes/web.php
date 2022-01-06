@@ -17,6 +17,8 @@ Route::get('/', function () {
 */
 
 use App\Buku;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
@@ -33,7 +35,8 @@ Route::get('/user-edit/{id}', 'UserController@edit');
 */
 // Route::resource('user', 'UserController');
 
-Route::resource('buku', 'BukuController');
+Route::resource('buku', 'BukuController')->except('index');
+Route::get('arsip/tahun/{year}', 'BukuController@index')->name('buku.index');
 Route::post('filter/custom', 'BukuController@custom')->name('filter.custom');
 Route::post('filter/', 'BukuController@filter')->name('filter');
 Route::get('buku/filter/{name}', 'BukuController@filterName')->name('filter.name');

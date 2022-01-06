@@ -21,11 +21,11 @@ class BukuController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index($year)
     {
-        $datas = Buku::get();
+        $datas = Buku::whereYear('created_at', $year)->get();
         $type = 0;
-        return view('buku.index', compact('datas','type'));
+        return view('buku.index', compact('datas','type','year'));
     }
 
     /**
@@ -71,7 +71,7 @@ class BukuController extends Controller
 
         alert()->success('Berhasil.','Data telah ditambahkan!');
 
-        return redirect()->route('buku.index');
+        return redirect()->route('buku.index',['year'=>date('Y')]);
 
     }
 
@@ -92,7 +92,7 @@ class BukuController extends Controller
     public function filterName($name)
     {
         if ($name=="all") {
-            return redirect()->route('buku.index');
+            return redirect()->route('buku.index',['year'=>date('Y')]);
         }
         if ($name=="week") {
             $type = 1;
@@ -139,7 +139,7 @@ class BukuController extends Controller
         Buku::find($id)->update($request->all());
 
         alert()->success('Berhasil.','Data telah diubah!');
-        return redirect()->route('buku.index');
+        return redirect()->route('buku.index',['year'=>date('Y')]);
     }
 
     /**
