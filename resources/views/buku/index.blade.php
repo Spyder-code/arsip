@@ -14,10 +14,11 @@
   <div class="col-lg-2">
     <div class="d-sm-flex">
       <a href="{{ route('buku.create') }}" class="btn btn-primary btn-rounded m-1"><i class="fa fa-plus"></i> Tambah Buku</a>
-      <a href="{{ route('export.excel',['type'=>$type]) }}" class="btn btn-success btn-rounded m-1"><i class="fa fa-download"></i> Export Excel</a>
       @if ($type==4)
-        <a href="{{ route('export.doc.custom',['from' =>$from ,'to'=>$to]) }}" class="btn btn-info btn-rounded m-1"><i class="fa fa-download"></i> Export Word</a>
+      <a href="{{ route('export.excel',['type'=>$type, 'from' =>$from ,'to'=>$to]) }}" class="btn btn-success btn-rounded m-1"><i class="fa fa-download"></i> Export Excel</a>
+      <a href="{{ route('export.doc.custom',['from' =>$from ,'to'=>$to]) }}" class="btn btn-info btn-rounded m-1"><i class="fa fa-download"></i> Export Word</a>
       @else
+        <a href="{{ route('export.excel',['type'=>$type]) }}" class="btn btn-success btn-rounded m-1"><i class="fa fa-download"></i> Export Excel</a>
         <a href="{{ route('export.doc',['type' =>$type]) }}" class="btn btn-info btn-rounded m-1"><i class="fa fa-download"></i> Export Word</a>
       @endif
     </div>
@@ -59,11 +60,11 @@
                       <div class="form-group row">
                         <div class="col">
                           <label>Dari:</label>
-                          <input type="date" name="from" class="form-control">
+                          <input type="date" name="from" class="form-control" value="{{ !empty($from)?$from:'' }}">
                         </div>
                         <div class="col">
                           <label>Sampai:</label>
-                          <input type="date" name="to" class="form-control">
+                          <input type="date" name="to" class="form-control" value="{{ !empty($to)?$to:'' }}">
                         </div>
                         <div class="col">
                           <button type="submit" class="btn btn-success mt-4">Submit</button>

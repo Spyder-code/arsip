@@ -40,7 +40,7 @@ Route::get('arsip/tahun/{year}', 'BukuController@index')->name('buku.index');
 Route::post('filter/custom', 'BukuController@custom')->name('filter.custom');
 Route::post('filter/', 'BukuController@filter')->name('filter');
 Route::get('buku/filter/{name}', 'BukuController@filterName')->name('filter.name');
-Route::get('/export/{type}', 'LaporanController@export')->name('export.excel');
+Route::get('/export/{type}/{from}/{to}', 'LaporanController@export')->name('export.excel');
 Route::get('/exportDoc/{type}', 'LaporanController@exportDoc')->name('export.doc');
 Route::get('/exportDoc/{from}/{to}', 'LaporanController@exportDocCustom')->name('export.doc.custom');
 

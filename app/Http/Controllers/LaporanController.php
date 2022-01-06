@@ -43,9 +43,9 @@ class LaporanController extends Controller
         return view('laporan.index',compact('datas','title'));
     }
 
-    public function export($type) 
+    public function export($type, $from = null, $to = null) 
     {
-        return Excel::download(new BukuExport($type), 'LAPORAN_SURAT_MASUK.xlsx');
+        return Excel::download(new BukuExport($type,$from,$to), 'LAPORAN_SURAT_MASUK.xlsx');
     }
 
     public function exportDoc($type)

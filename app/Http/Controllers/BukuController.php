@@ -81,7 +81,8 @@ class BukuController extends Controller
         $type = 4;
         $from = $request->from;
         $to = $request->to;
-        return view('buku.index',compact('datas','type','from','to'));
+        $year = date('Y');
+        return view('buku.index',compact('datas','type','from','to','year'));
     }
 
     public function filter(Request $request)

@@ -10,9 +10,13 @@ use Maatwebsite\Excel\Concerns\FromView;
 class BukuExport implements FromView
 {
     protected $type;
+    protected $from;
+    protected $to;
 
-    function __construct($type) {
+    function __construct($type, $from = null, $to = null) {
             $this->type = $type;
+            $this->from = $from;
+            $this->to = $to;
     }
 
     public function view(): View
@@ -29,6 +33,9 @@ class BukuExport implements FromView
         }
         if ($type==3) {
             $data   = Buku::whereYear('created_at', date('Y'))->get();
+        }
+        if ($type==4) {
+            $data   = Buku::whereBetween('created_at', [$this->from, $this->to])->get();
         }
         return view('exports.book',compact('data'));
     }
