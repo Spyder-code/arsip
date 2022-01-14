@@ -18,7 +18,7 @@
       <a href="{{ route('export.excel',['type'=>$type, 'from' =>$from ,'to'=>$to]) }}" class="btn btn-success btn-rounded m-1"><i class="fa fa-download"></i> Export Excel</a>
       <a href="{{ route('export.doc.custom',['from' =>$from ,'to'=>$to]) }}" class="btn btn-info btn-rounded m-1"><i class="fa fa-download"></i> Export Word</a>
       @else
-        <a href="{{ route('export.excel',['type'=>$type]) }}" class="btn btn-success btn-rounded m-1"><i class="fa fa-download"></i> Export Excel</a>
+        <a href="{{ route('export.excel',['type'=>$type, 'from' =>0 ,'to'=>0]) }}" class="btn btn-success btn-rounded m-1"><i class="fa fa-download"></i> Export Excel</a>
         <a href="{{ route('export.doc',['type' =>$type]) }}" class="btn btn-info btn-rounded m-1"><i class="fa fa-download"></i> Export Word</a>
       @endif
     </div>
